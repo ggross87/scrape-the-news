@@ -1,0 +1,41 @@
+body{
+  background: url('../img/motivo3-01.jpg') repeat;
+  background-size: 600px;
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+main{
+  flex: 1 0 auto;
+}
+
+.articleBody{
+  height: 200px;
+  font-size: 20px;
+  overflow-y: scroll;
+  line-height: 150%;
+}
+
+#nameComment{
+  /*border-bottom: 2px solid #ec407a;*/
+  font-weight: bold;
+  background: #ec407a;
+  color: white;
+}
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+ color: #e91e63;
+}
+/* label underline focus color */
+.input-field input[type=text]:focus {
+ border-bottom: 1px solid #e91e63;
+ box-shadow: 0 1px 0 0 #000;
+}
+/* icon prefix focus color */
+.input-field .prefix.active {
+ color: #ec407a;
+}

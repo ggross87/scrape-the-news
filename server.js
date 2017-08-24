@@ -21,9 +21,9 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //connecting to MongoDB
-mongoose.connect('mongodb://localhost/scraper_news');
+mongoose.connect('mongodb://localhost/scraped_news');
 
-//mongoose.connect('mongodb://localhost/scraper_news');
+//mongoose.connect('mongodb://localhost/scraped_news');
 
 
 var db = mongoose.connection;

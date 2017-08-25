@@ -21,8 +21,16 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //connecting to MongoDB
-mongoose.connect('mongodb://localhost/scraper_news');
+var databaseUri = 'mongodb://localhost/week18day3mongoose';
 
+if(process.env.MONGODB_URI) {
+// THIS EXECUTES IF THIS IS WORKS IN YOUR HEROKU APP
+  mongoose.connect(process.env.MONGODB_URI);
+}
+else {
+// THIS EXECUTES IF THIS IS WORKS IN YOUR HEROKU APP
+  mongoose.connect(databaseUri);
+}
 //mongoose.connect('mongodb://localhost/scraper_news');
 
 

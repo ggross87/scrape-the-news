@@ -21,7 +21,13 @@ app.engine('handlebars', exphbs({
 app.set('view engine', 'handlebars');
 
 //connecting to MongoDB
-mongoose.connect('mongodb://heroku_m7nbf4tq:kjkg9g0qbe5180h8q8muc90g4i@ds157873.mlab.com:57873/heroku_m7nbf4tq');
+var databaseUri = 'mongodb://heroku_m7nbf4tq:kjkg9g0qbe5180h8q8muc90g4i@ds157873.mlab.com:57873/heroku_m7nbf4tq';
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(process.env.MONGODB_URI);
+} else {
+  mongoose.connect(databaseUri);
+}
 
 //mongoose.connect('mongodb://localhost/scraper_news');
 
